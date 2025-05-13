@@ -11,6 +11,19 @@ app.use(express.urlencoded({ extended: true}));
 app.use("/", indexRouter);
 app.use("/new", messageRouter);
 
+//Catches 404 errors
+app.use((req, res, next) => {
+    const err = new Error("Page Not Found");
+    err.status = 404;
+    next(err)
+})
+
+//Error handler - currently displays 404 errors only
+app.use((err, req, res, next) => {
+    res.status(err.statusCode || 500);
+    res.render("error");
+})
+
 const PORT = 3000;
 app.listen(PORT, () => {
 
