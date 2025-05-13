@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <a href="/new">Add New Message</a>
-    <ul>
+    <h1>Mini Message Board</h1>
+    <a href="/new">Post New Message</a>
+    <div>
         <% for (let i = 0; i < messages.length; i++) { %>
-            <li>
-                <%= messages[i].user %>: <%= messages[i].text %><br>
-                <%= messages[i].added %>
-            </li>
+            <div class="msg-box">
+                <span class="user"><%= messages[i].user %>:</span> <%= messages[i].text %><br>
+                <span class="date"><%= messages[i].added %></span>
+            </div>
     <%}%>
-    </ul>
+    </div>
 </body>
 </html>
