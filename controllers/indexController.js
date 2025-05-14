@@ -1,4 +1,5 @@
 const messages = require("../data/messages");
+const { randomUUID } = require("crypto");
 
 const indexController = () => {
 
@@ -14,6 +15,7 @@ const indexController = () => {
                 text: text,
                 user: user,
                 added: new Date(),
+                id: randomUUID(),
             });
 
             res.redirect("/");

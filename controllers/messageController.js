@@ -9,7 +9,7 @@ const messageController = () => {
         getPage: (req, res) => {
             const messageId = req.params.id;
             const message = messages.find(
-                (msg) => msg.added.toISOString() === messageId
+                (msg) => msg.id === messageId
             );
             if (!message) {
                 return res.status(404).render("error", { message: "Message not found"});
