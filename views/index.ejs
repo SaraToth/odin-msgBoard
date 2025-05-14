@@ -13,7 +13,8 @@
         <% for (let i = 0; i < messages.length; i++) { %>
             <div class="msg-box">
                 <span class="user"><%= messages[i].user %>:</span> <%= messages[i].text %><br>
-                <span class="date"><%= messages[i].added %></span>
+                <span class="date"><%= messages[i].added %></span><br>
+                <a href="/new/message/<%= messages[i].added.toISOString() %>">Open</a>
             </div>
     <%}%>
     </div>

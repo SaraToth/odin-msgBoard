@@ -12,6 +12,7 @@ app.use(express.static(assetsPath));
 
 app.use(express.urlencoded({ extended: true}));
 app.use("/", indexRouter);
+app.use("/message", messageRouter);
 app.use("/new", messageRouter);
 
 //Catches 404 errors

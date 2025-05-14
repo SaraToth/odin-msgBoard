@@ -17,7 +17,8 @@ const indexController = () => {
             });
 
             res.redirect("/");
-        }
+        },
+
     }
 }
 
